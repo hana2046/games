@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<style type="text/css">
+			.border {
+				margin: 20px;
+			    border: 1px solid blue;
+			    padding: 5px;
+/*			    border-radius: 20px;*/
+			}
+			.item{
+				    border: none;
+				    margin: 15px;
+				    padding: 25px;
+				    width: -webkit-fill-available;
+			}
+			button {
+				color: white;
+				 background-color: #4CAF50;
+				 cursor: pointer;
+
+			}
+			button:hover {
+			  background-color: #3e8e41;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="display: flex;">
+			<canvas class="border" id="game" width="480" height="640"></canvas>
+			<!-- <canvas class="border" id="game" height="640"></canvas> -->
+			<div class="border" id="details">
+				<div class="item">
+					<div>Timer</div>
+					<div id="timer">00:00:00</div>
+				</div>
+				<div class="item">
+
+					<label for="mySelect">size ball:</label>
+				    <select id="mySelect">
+				        <option value=10>1</option>
+				        <option value=20>2</option>
+				        <option value=30 selected>3</option>
+				        <option value=40>4</option>
+				    </select>
+				</div>
+
+				<button class="item" onclick="buildGame()">new Game</button>
+
+			    <svg id="stopSVG" height="140" width="180" xmlns="http://www.w3.org/2000/svg"  onclick="pauseGame()" >
+				  <polygon points="75,7.5 129,38.5 129,101 75,132.5 21,101 21,38.5"
+				  style="fill:#de1865;stroke:black;stroke-width:3" >
+				  <animateTransform
+				      	attributeName="transform"
+		                attributeType="XML"
+		                type="rotate"
+                        
+		                from="0 70 75"  
+		                to="360 70 75"
+		                begin="0.0001s"
+                        dur="8s"
+				      	repeatCount="indefinite" />
+				  </polygon>
+				  <text x="75" y="75" text-anchor="middle" dominant-baseline="middle"
+				  style="font-family:Verdana;font-size:32;fill:white;">STOP
+				    <animateTransform
+				      	attributeName="transform"
+		                attributeType="XML"
+		                type="rotate"
+                        
+		                from="0 70 75"  
+		                to="360 70 75"
+		                begin="0.0001s"
+                        dur="8s"
+				      	repeatCount="indefinite" />
+				</svg>
+				<svg id="continueSVG" height="140" width="180" xmlns="http://www.w3.org/2000/svg"  onclick="pauseGame()" >
+<circle cx="90" cy="70" r="25" style="fill:#4CAF50;">
+    <animate
+      attributeName="r"
+      begin="0.0001s"
+      dur="8s"
+      values="25;50;25" 
+      repeatCount="indefinite" />
+  </circle>
+				<text x="90" y="70" text-anchor="middle" dominant-baseline="middle" 
+        style="font-family:Verdana; font-size:8; fill:white;">
+    continue
+    <animate
+      attributeName="font-size"
+      begin="0.0001s"
+      dur="8s"
+      values="8;16;8"
+      repeatCount="indefinite" />
+  </text>
+				</svg>
+				<button class="item" onclick="pauseGame()" >Pause Game</button>
+				<button class="item" onclick="continueGame()" >continue Game</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="bubbleshooter.js">
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style type="text/css">
+						.border {
+				margin: 20px;
+			    border: 1px solid blue;
+			    padding: 5px;
+/*			    border-radius: 20px;*/
+			}
+			.item{
+				    border: none;
+				    margin: 15px;
+				    padding: 25px;
+				    width: -webkit-fill-available;
+			}
+			button {
+				color: white;
+				 background-color: #4CAF50;
+				 cursor: pointer;
+
+			}
+			button:hover {
+			  background-color: #3e8e41;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="display: flex;">
+			<canvas class="border" id="game" width="300" height="640"></canvas>
+			<div class="border" id="details">
+				<button class="item" onclick="pauseGame()">pauseGame</button>
+				<button class="item" onclick="continueGame()">continueGame</button>
+				<button class="item" onclick="buildGame()">new Game</button>
+
+				<div class="item" id="chooseColor"> chose color car
+					<input id="colorPicker" type="color" value="#000000" />
+				</div>
+
+				<!-- <button class="item" onclick="colorPicker.click()">colorCar</button> -->
+				<!-- <button class="item" onclick="document.getElementById('chooseColor').style.display = 'block'">colorCar</button> -->
+
+				<div class="item">
+						<label for="mySelect">speed game:</label>
+					    <select id="mySelect">
+					        <option value=10>1</option>
+					        <option value=20>2</option>
+					        <option value=30 selected>3</option>
+					        <option value=40>4</option>
+					        <option value=50>5</option>
+					    </select>
+				</div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="speed_car.js">
+		</script>
+	</body>
+</html>
