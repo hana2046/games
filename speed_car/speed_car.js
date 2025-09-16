@@ -93,9 +93,11 @@ function biludCar(row = -1) {
 }
 
 function buildGame() {
+        last_posion = null;
         keysPressed = {};
         color_car = document.getElementById('colorPicker').value
         static_time = Math.floor(document.getElementById('mySelect').value);
+        next_car = null;
         biludBoard()
         biludCar(matrix.length-1)
         continueGame()
